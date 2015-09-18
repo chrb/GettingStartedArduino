@@ -1,7 +1,7 @@
 // Example 02: Turn on LED while the button is pressed
 
-const int LED = 10;
-const int BUTTON = 7;
+const int LED = 8;
+const int BUTTON = 13;
 
 int val = 0;
 

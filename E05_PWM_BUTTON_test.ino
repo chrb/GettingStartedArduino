@@ -1,12 +1,13 @@
-// Example 03C: Turn on/off LED when the button is pressed
-// improved forumla including simple de-bouncing
+// Example 05_test
 
-const int LED = 10;
+const int LED = 13;
 const int BUTTON = 7;
 
 int val = 0;
 int old_val = 0;
 int state = 0;
+int i = 0;
+
 
 void setup()
 {
@@ -28,8 +29,16 @@ void loop()
   old_val = val;
   
   if (state == 1) {
-    digitalWrite(LED, HIGH);
+    for (i = 1; i < 255; i++) {
+      analogWrite(LED, i);
+      delay(10);
+    }
+    
+    for (i = 255; i > 1; i--) {
+      analogWrite(LED, i);
+      delay(10);
+    }
   } else {
-    digitalWrite(LED, LOW);
+    analogWrite(LED, 0);
   }
 }
